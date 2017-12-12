@@ -1,0 +1,8 @@
+<div *ngIf="collection">
+    <h1>{{collection.name | uppercase }}</h1>
+    <div>
+        <label>Name:
+            <input [(ngModel)]="collection.name">
+        </label>
+    </div>
+</div>
