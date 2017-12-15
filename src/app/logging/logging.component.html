@@ -1,0 +1,4 @@
+<div *ngIf="logger.logRecords.length">
+    <button class="clear" (click)="logger.clear()">X</button>
+    <div *ngFor="let r of logger.logRecords">{{r}}</div>
+</div>

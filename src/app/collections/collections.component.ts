@@ -5,6 +5,7 @@
 import { Component, OnInit } from '@angular/core';
 import {COLLECTIONS} from "../mock/collections.mock";
 import {Collection} from "../model/collection";
+import {CollectionService} from "./service/collection.service";
 
 @Component({
     selector: 'collections',
@@ -12,16 +13,17 @@ import {Collection} from "../model/collection";
     styles: [require('./collections.component.css')]
 })
 export class CollectionsComponent implements OnInit {
-    collections: Collection[] = COLLECTIONS;
+    collections: Collection[];
     selected: Collection;
     ngOnInit(): void {
+        this.collectionService.getCollections().subscribe(c => this.collections = c);
     }
 
     onSelect(collection: Collection): void {
-        this.selected = collection
+        this.selected = collection;
     }
 
-    constructor() {
+    constructor(private collectionService: CollectionService) {
 
     }
 }
