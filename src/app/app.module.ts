@@ -9,11 +9,18 @@ import { CollectionDetailsComponent } from "./collection/collectionDetails.compo
 import { CollectionService } from "./collections/service/collection.service";
 import { LoggingService } from './logging/logging.service';
 import { LoggingComponent } from './logging/logging.component';
+import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { APP_BASE_HREF } from '@angular/common';
 
 @NgModule({
-    imports:      [ BrowserModule, FormsModule ],
-    declarations: [ AppComponent, CollectionsComponent, CollectionDetailsComponent, LoggingComponent ],
+    imports:      [ BrowserModule, FormsModule, AppRoutingModule ],
+    declarations: [ AppComponent, CollectionsComponent, CollectionDetailsComponent, LoggingComponent, DashboardComponent ],
     bootstrap:    [ AppComponent ],
-    providers:    [ CollectionService, LoggingService ]
+    providers:    [
+        CollectionService,
+        LoggingService,
+        {provide: APP_BASE_HREF, useValue: '/'}
+    ]
 })
 export class AppModule {}

@@ -1,8 +1,9 @@
 <ul>
-    <li *ngFor="let collection of collections"
-        (click)="onSelect(collection)" [class.selected]="collection === selected">
-        <span class="badge">{{collection.id}}</span>{{collection.name}}
+    <li *ngFor="let collection of collections">
+        <a routerLink="/collection/{{collection.id}}">
+            <span class="badge">{{collection.id}}</span>{{collection.name}}
+        </a>
     </li>
 </ul>
 
-<collection [collection]="selected"></collection>
+<collection></collection> <!-- [collection]="selected" - thi is using a subcomponent -->

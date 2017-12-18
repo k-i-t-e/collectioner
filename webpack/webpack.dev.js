@@ -10,7 +10,8 @@ const ChunkWebpack = webpack.optimize.CommonsChunkPlugin;
 module.exports = {
     devServer: {
         contentBase: path.resolve(rootDir, 'src'),
-        port: 8080
+        port: 8080,
+        historyApiFallback: true
     },
     devtool: 'source-map',
     entry: {
@@ -36,7 +37,7 @@ module.exports = {
             {
                 test: /\.ts$/,
                 exclude: /node_modules/,
-                use: ['ts-loader'] // TODO: add babel-loader?
+                use: ['ts-loader', 'angular-router-loader'] // TODO: add babel-loader?
             }
         ]
     },
