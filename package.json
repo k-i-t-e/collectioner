@@ -4,6 +4,7 @@
     "@angular/compiler": "^5.0.3",
     "@angular/core": "^5.0.3",
     "@angular/forms": "^5.1.0",
+    "@angular/http": "^5.1.1",
     "@angular/platform-browser": "^5.0.3",
     "@angular/platform-browser-dynamic": "^5.0.3",
     "@angular/router": "^5.1.1",
@@ -25,6 +26,7 @@
     "build": "webpack --config webpack/webpack.dev.js"
   },
   "devDependencies": {
+    "angular-in-memory-web-api": "^0.5.2",
     "angular-router-loader": "^0.8.0",
     "angular2-template-loader": "^0.6.2",
     "babel-core": "^6.25.0",

@@ -12,9 +12,10 @@ import { LoggingComponent } from './logging/logging.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { APP_BASE_HREF } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-    imports:      [ BrowserModule, FormsModule, AppRoutingModule ],
+    imports:      [ BrowserModule, FormsModule, AppRoutingModule, HttpClientModule ],
     declarations: [ AppComponent, CollectionsComponent, CollectionDetailsComponent, LoggingComponent, DashboardComponent ],
     bootstrap:    [ AppComponent ],
     providers:    [

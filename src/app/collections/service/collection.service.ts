@@ -6,10 +6,14 @@ import { Collection } from "../../model/collection";
 import { COLLECTIONS } from "../../mock/collections.mock";
 import { LoggingService } from '../../logging/logging.service';
 import resolve = Promise.resolve;
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class CollectionService {
-    constructor(private logger: LoggingService) {
+    private rootUrl: string = 'http://collectionapi.hopto.org/api/';
+    private collectionsUrl: string = 'collection';
+
+    constructor(private logger: LoggingService, private http: HttpClient) {
     }
 
     getCollections(): Observable<Collection[]> {
