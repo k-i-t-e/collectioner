@@ -17,7 +17,6 @@ export class DashboardComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        console.log(this.collectionService.getCollections())
         this.collectionService.getCollections().toPromise().then(c => this.collections = c.slice(0, 5))
     }
 

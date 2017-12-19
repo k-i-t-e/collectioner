@@ -11,14 +11,14 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class CollectionService {
     private rootUrl: string = 'http://collectionapi.hopto.org/api/';
-    private collectionsUrl: string = 'collection';
+    private collectionsUrl: string = 'api/collection';
 
     constructor(private logger: LoggingService, private http: HttpClient) {
     }
 
     getCollections(): Observable<Collection[]> {
         this.logger.log('CollectionService', 'Collections requested');
-        return of(COLLECTIONS);
+        return this.http.get<Collection[]>(this.collectionsUrl);
     }
 
     getCollection(id: number): Promise<Collection> {
